@@ -2,7 +2,7 @@ require "heroku_postgis/version"
 
 module HerokuPostgis
   class Railtie < Rails::Railtie
-    initializer "active_record.initialize_database.override.postgis" do
+    initializer "active_record.initialize_database.heroku_postgis" do
       ActiveSupport.on_load(:active_record) do
         if url = ENV['DATABASE_URL']
           ActiveRecord::Base.connection_pool.disconnect!
@@ -22,3 +22,5 @@ module HerokuPostgis
     end
   end
 end
+
+require 'heroku_postgis/railtie' if defined?(Rails)
