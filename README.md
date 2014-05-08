@@ -12,7 +12,11 @@ https://devcenter.heroku.com/articles/postgis#setting-up-postgis-with-rails
 
 Add this line to your application's Gemfile:
 
-    gem 'heroku_postgis'
+    gem 'heroku_postgis' 
+
+and run
+
+    $ bundle install
 
 And that's it!  There is no need to require this anywhere in your Rails app.
 
